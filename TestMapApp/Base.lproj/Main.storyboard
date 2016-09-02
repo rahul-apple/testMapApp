@@ -1,25 +1,79 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="9k2-64-74h">
+                                <rect key="frame" x="20" y="28" width="280" height="476"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Agi-3x-iuJ"/>
+                                </connections>
+                            </mapView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="0OJ-4x-IeF">
+                                <rect key="frame" x="85" y="464" width="207" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="207" id="VQd-uk-z0M"/>
+                                    <constraint firstAttribute="height" constant="28" id="xv6-xP-6k7"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Standard"/>
+                                    <segment title="Satelite"/>
+                                    <segment title="Hybrid"/>
+                                </segments>
+                                <connections>
+                                    <action selector="setMapType:" destination="BYZ-38-t0r" eventType="valueChanged" id="eBY-Ma-FbV"/>
+                                </connections>
+                            </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DBR-Zw-33Z">
+                                <rect key="frame" x="20" y="512" width="280" height="42"/>
+                                <color key="backgroundColor" red="0.59607843140000005" green="0.7843137255" blue="0.30588235289999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="0x2-8I-Cj1"/>
+                                </constraints>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="nextAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Vqs-7m-XiR"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="0OJ-4x-IeF" firstAttribute="trailing" secondItem="9k2-64-74h" secondAttribute="trailing" constant="-8" id="A22-fp-Mop"/>
+                            <constraint firstItem="9k2-64-74h" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="FAD-7a-1uQ"/>
+                            <constraint firstAttribute="trailing" secondItem="9k2-64-74h" secondAttribute="trailing" constant="20" id="GsR-eM-eBE"/>
+                            <constraint firstItem="DBR-Zw-33Z" firstAttribute="trailing" secondItem="9k2-64-74h" secondAttribute="trailing" id="HcU-Fa-3Bm"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="9k2-64-74h" secondAttribute="bottom" constant="64" id="JvV-do-cE6"/>
+                            <constraint firstItem="DBR-Zw-33Z" firstAttribute="leading" secondItem="9k2-64-74h" secondAttribute="leading" id="jyn-Q0-nzZ"/>
+                            <constraint firstItem="9k2-64-74h" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="kXK-xo-9Lo"/>
+                            <constraint firstItem="DBR-Zw-33Z" firstAttribute="top" secondItem="9k2-64-74h" secondAttribute="bottom" constant="8" id="lYW-uS-tYq"/>
+                            <constraint firstItem="0OJ-4x-IeF" firstAttribute="top" secondItem="9k2-64-74h" secondAttribute="bottom" constant="-40" id="mOx-Ms-YhF"/>
+                        </constraints>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="mapView" destination="9k2-64-74h" id="iWB-pI-fqG"/>
+                        <outlet property="next" destination="DBR-Zw-33Z" id="mb8-3O-6mB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="305" y="418"/>
         </scene>
     </scenes>
 </document>

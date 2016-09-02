@@ -15,6 +15,7 @@
 		BE63173F1D7949FC00386984 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE63173D1D7949FC00386984 /* LaunchScreen.storyboard */; };
 		BE63174A1D7949FC00386984 /* TestMapAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BE6317491D7949FC00386984 /* TestMapAppTests.m */; };
 		BE6317551D7949FC00386984 /* TestMapAppUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = BE6317541D7949FC00386984 /* TestMapAppUITests.m */; };
+		BE6317631D794A0A00386984 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE6317621D794A0A00386984 /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		BE6317501D7949FC00386984 /* TestMapAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestMapAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE6317541D7949FC00386984 /* TestMapAppUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestMapAppUITests.m; sourceTree = "<group>"; };
 		BE6317561D7949FC00386984 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BE6317621D794A0A00386984 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE6317631D794A0A00386984 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +84,7 @@
 		BE6317231D7949FC00386984 = {
 			isa = PBXGroup;
 			children = (
+				BE6317621D794A0A00386984 /* MapKit.framework */,
 				BE63172E1D7949FC00386984 /* TestMapApp */,
 				BE6317481D7949FC00386984 /* TestMapAppTests */,
 				BE6317531D7949FC00386984 /* TestMapAppUITests */,
@@ -207,6 +211,11 @@
 				TargetAttributes = {
 					BE63172B1D7949FC00386984 = {
 						CreatedOnToolsVersion = 7.3;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					BE6317441D7949FC00386984 = {
 						CreatedOnToolsVersion = 7.3;
