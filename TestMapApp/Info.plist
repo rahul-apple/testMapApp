@@ -38,6 +38,8 @@
 		<string>MKDirectionsModeBike</string>
 		<string>MKDirectionsModePedestrian</string>
 	</array>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>App will monitor your location</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>location</string>
@@ -56,7 +58,5 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>NSLocationAlwaysUsageDescription</key>
-	<string>App will monitor your location</string>
 </dict>
 </plist>

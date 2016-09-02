@@ -34,6 +34,7 @@
   [self zoomToCurrentLocation:nil];
   _mapView.mapType = MKMapTypeHybrid;
   [segmentControl setSelectedSegmentIndex:2];
+  [segmentControl.layer setCornerRadius:3.0f];
   [_next setTitle:BUTTON_TITLE1 forState:UIControlStateNormal];
   [self addLongPressGuesture];
   self.navigationItem.title = @"TEST MAP APP";
@@ -188,6 +189,7 @@
     [_mapView removeAnnotations:[_mapView annotations]];
     [_mapView removeOverlays:[_mapView overlays]];
     [locationManager stopUpdatingLocation];
+    [_next setTitle:BUTTON_TITLE1 forState:UIControlStateNormal];
   }
 }
 
